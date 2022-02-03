@@ -1,0 +1,99 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+    <div class = "container-header">
+        <!-- MenuButtom -->
+        <div class = "menu-buttom">
+            <%#= image_tag("white-menu-icon.png", class:"menu-icon")%>
+            <h7 class="menuBtn">MENU</h7>
+        </div>
+        <!-- SiteLogo -->
+        <div class = "site-logo">
+            <%= link_to(root_path(), class: "site-logo-link") do %>
+                <%= image_tag("NovaNewsLogo.png", class: "logo-header") %>
+            <% end %>
+        </div>
+        <!-- SiteSearch -->
+        <div class = "search-header">
+            <%= link_to(search_path(), class: "search-link") do %>
+                <span class = "search-text">
+                    Buscar  <span class ="header__icon ion-search"></span>
+                </span>
+                
+            <% end %>
+        </div>
+    </div>
+</nav>
+<!--/.Navbar-->
+
+<!-- Hidden Nav-Bar -->
+<div class = "collapse-hidden navbar-collapse" id = "hidden-navbar" >
+  <div class = "container">
+
+      <div class = "icon-bar" hidden >
+        <a class = "icon-link" href = <%= root_path()%>>CAPA</a>
+      </div>
+
+      <div class="icon-bar" hidden>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">EDITORIAIS</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <% ContentBuilderCategory.all.order(:name).each do |category| %>
+            <%= link_to category.name, news_by_category_path(category), class: "dropdown-item" %>
+          <% end %>
+        </div>
+      </div> 
+
+      <div class = "icon-bar" hidden >
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">MULTIMIDIAS</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href=<%= albums_path() %>>Festas & Eventos</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>  
+
+      <div class = "icon-bar" hidden >
+        <%= link_to "ANUNCIE", announce_path(), class: "icon-link" %>
+      </div>
+
+      <div class = "icon-bar" hidden >
+        <%= link_to "EXPEDIENTE", office_hour_path(), class: "icon-link" %>
+      </div>
+
+      <div class = "icon-bar" hidden >
+        <%= link_to "FALE CONOSCO", contact_path(), class: "icon-link" %>
+      </div>
+
+      <div class = "icon-bar" id="last-news" hidden >
+        <a class = "icon-link" href = <%=news_path(@news)%> >ÚLTIMAS NOTICIAS</a>
+      </div>
+  </div>
+</div>
+
+<!-- MenuButtom scrip -->
+<script>
+  //that will return a htmlcolletion array
+  const navItem = document.getElementsByClassName("icon-bar");
+  let op = 0;
+  
+  const menuButtom = document.querySelector(".menu-buttom");
+
+  menuButtom.addEventListener("click", function(e){
+    e.preventDefault();
+            
+    if(op === 0){
+      for(let i of navItem){
+        i.hidden = false;
+        op++;
+      }
+    }
+    else{
+      for(let i of navItem){
+        i.hidden = true;
+        op = 0;
+      }
+    }
+  });
+</script>

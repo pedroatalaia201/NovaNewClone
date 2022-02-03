@@ -1,0 +1,147 @@
+$primary-color: #403F4C;
+
+// New Header
+.navbar{
+    position: relative;
+    margin: 0;
+    border-radius: 0px;
+  
+    width: 100%;
+    height: 8rem;
+  
+    background-color: $primary-color;
+    color: #fff;
+    font-weight: 600;
+  }
+  .container-header{
+    width: 50%;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
+  
+    .menu-buttom{
+      align-items: flex-start;
+  
+      position: static;
+      float: left;
+  
+      color: #fff;
+  
+      .menuBtn{
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+    .site-logo{
+      //margin-left: auto;
+  
+      .logo-header{
+        width: 90%;
+        height: 5.125rem;
+      }
+    }
+    .search-header{
+      //margin-left: auto;
+  
+      position: relative;
+      bottom: -0.1rem;
+  
+      .search-text{
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+  
+  .menu-icon{
+    height: 1rem;
+    width: 1rem;
+  
+    margin-top: -2px;
+  }
+  
+  
+  
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+  }
+  
+  html::-webkit-scrollbar {
+    // Thin
+    width: 6px;
+    // Normal
+    // width: 12px;
+    background-color: #f5f5f5;
+  }
+  
+  html::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: $primary-color;
+  }
+  
+  
+  
+  /* Hidden navbar */
+  #hidden-navbar{
+   
+  
+    background-color: #34333E;
+    color: #fff;  
+  
+    .container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  
+      width: 50%;
+      height: inherit;
+  
+      margin-left: auto;
+      margin-right: auto;
+  
+      .icon-bar{
+        margin: 5px;
+        margin-right: 1rem;
+  
+        .icon-link{
+          color: #FFFFFFE6;
+          font-size: 12px;
+          font-weight: 600;
+        }
+        .icon-link:hover{
+          color: #FFFFFF99;
+        }
+  
+        #navbarDropdownMenuLink{
+          color: #FFFFFFE6;
+          font-size: 12px;
+          font-weight: 600;
+  
+          padding-top: 0.25rem;
+        }
+      }
+      #last-news{
+        margin-left: auto;
+      }
+    }
+  }
+
+  
+  
+  
