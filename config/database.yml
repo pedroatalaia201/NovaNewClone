@@ -2,7 +2,7 @@ development: &dev
   host: 127.0.0.1
   adapter: postgresql
   encoding: unicode
-  database: clone_news_dev
+  database: novanews_clone_dev
   pool: 5
   username: postgres
   password: postgres
@@ -11,7 +11,7 @@ test: &test
   host: 127.0.0.1
   adapter: postgresql
   encoding: unicode
-  database: clone_news_test
+  database: novanews_clone_test
   pool: 5
   username: postgres
   password: postgres

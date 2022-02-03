@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require owl.carousel
+
+$(document).ready(function() {
+    $(".fc-slide").owlCarousel({
+      autoPlay: 7000,
+      singleItem: true,
+      stopOnHover: true,
+      slideSpeed: 500,
+      paginationSpeed: 500,
+      rewindSpeed: 1000,
+      navigation: true,
+      navigationText: ['<span class="ion-chevron-left"></span>','<span class="ion-chevron-right"></span>']
+    });
+});
+  
