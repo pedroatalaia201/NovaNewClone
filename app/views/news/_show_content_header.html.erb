@@ -1,0 +1,9 @@
+<h1 class = "news-article-title">
+    <%= news.title %>
+</h1>
+<% if news.summary.present? %>
+    <p class = "news-article-sub_title">
+        <%= news.summary %>
+    </p>
+<% end %>
+

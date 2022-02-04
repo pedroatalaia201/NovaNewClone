@@ -1,7 +1,7 @@
 class ContentBuilder < RailsAdminContentBuilder::ContentBuilder
     validates :content_builder_category, presence: true
   
-    searchkick batch_size: 50, index_prefix: "clonenews"
+    #searchkick batch_size: 50, index_prefix: "clonenews"
   
     belongs_to :content_builder_category
   

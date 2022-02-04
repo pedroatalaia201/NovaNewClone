@@ -1,0 +1,55 @@
+<% if news.category.present? %>
+    <p class = "news-category">
+        <%= news.category.name %> &bull;
+        <!-- &bull; is the bullet point -->
+    </p>
+<% end %>
+
+<% publish = news.date_publish %>
+<% updated = news.updated_at %>
+
+<div class = "news-date">
+    <p class = "news-date-publish">
+        <%= publish.strftime("%d/%m/%Y")%> às <%= publish.strftime("%H:%M") %>&bull;
+         Atualizada em <%= updated.strftime("%d/%m/%Y") %> às <%= updated.strftime("%H:%M") %>
+    </p>
+</div>
+
+<div class = "news-contentBuilder">
+    <% if news.content.present? %>
+        <%= news.content_sanitized  %>
+    <% end %>
+</div>
+
+<div class="section__footer">
+  <div class="section__nav">
+    <!-- 
+      the link_to :back wil generate <a href="javascript:history.back()">voltar</a> 
+      with this you'll go to the previus page in the browser history.
+    -->
+    <%= link_to :back, class: 'link link--left link--tiny' do %>
+      <span class="icon--left ion-ios-arrow-thin-left"></span> Voltar
+    <% end %>
+
+    <%= link_to root_path(), class: 'link link--left link--tiny', style: 'margin-left: 1rem;' do %>
+      <span class="icon--left ion-android-print"></span> Imprimir
+    <% end %>
+
+    <%= render "layouts/includes/social" %>
+  </div>
+</div>
+
+<% url = "http://localhost:3000" %>
+<% url += news_show_path(@news) %>
+<% url += ".html.erb"%>
+
+<div class = "facebook-comment-box">
+
+  <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="1"></div>
+  <!-- 
+    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
+  -->
+</div>
+
+
+

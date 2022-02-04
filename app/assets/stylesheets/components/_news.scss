@@ -1,0 +1,332 @@
+$primary-color: #403F4C;
+$secondary-color: #11111199;
+
+.news-content{
+    width: 50%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-page-title{
+    position: relative;
+    top: 1rem;
+
+    border-top: $primary-color 2px solid;
+    margin-bottom: 2rem;
+
+    padding: 0.8rem 0;
+
+    .new-page-head{
+        font-size: 28px !important;
+        font-weight: bold !important;
+        color: #403F4C;
+    }
+}
+
+.news-list{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.news-date{
+    margin-top: 1rem;
+    
+    display: flex;
+    flex-direction: row;
+
+    align-items: baseline;
+
+    border-bottom: rgba(77, 74, 69, 0.1) 1px solid;
+    .icon--left{
+        height: 40px;
+
+        margin-right: 5px;
+    }
+}
+/* for calendar icons */
+#calendar{
+    position: relative;
+    
+    margin-right: 5px;
+}   
+
+.news-items{
+    border-bottom: rgba(77, 74, 69, 0.1) 1px solid;
+}
+.news-link-item{
+    text-decoration: none;
+
+    display: grid;
+    align-items: baseline;
+
+    .news-time{
+        position: relative;
+        margin-left: auto;
+
+        top: 35px;
+
+        text-decoration: none !important;
+        color:rgb(151, 151, 151);
+    }
+
+    .news-category{
+        color: rgb(234, 71, 84);
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        position: relative;
+        float: left;
+        top: auto;
+    }
+}
+.news-contain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-right: 2rem;
+    
+    .news-figure{
+        width: 150px;
+        height: 110px;
+
+        .news-fig-img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .news-text{
+        margin: 1rem !important;
+        color: #000000;
+
+        .news-title{
+            font-weight: 600;
+            font-size: 24px;
+        }
+    }
+    .news-text:hover{
+        .news-title{
+            text-decoration: underline;
+        }
+    }
+   
+}
+
+// Show news: 
+.news-article{
+    margin-top: 1rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+// Social Icons
+.social-decoration{
+    position: relative;
+
+    height: 1rem;
+    
+}
+.social{
+    position: relative;
+    bottom: 2.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10.438rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    background-color: #FFFF;
+
+    .social__caption{
+        display: none;
+    }
+
+    .social_icon {
+        background-color: #11111114;
+        
+
+        width: 2rem;
+        height: 2rem;
+
+        border-radius: 100%;
+        border: 0;
+        text-align: center;
+
+        a{
+            position: relative;
+            top: 3px;
+
+            font-size: 0.7rem;  
+            color: #11111180;
+        }
+    }
+    .social_icon:hover{
+        background-color: #403F4C;
+        a{
+            color: aliceblue;
+        }
+    }
+}
+.news-article-header{
+    position: relative;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+
+    text-align: center;
+
+    border-bottom: #11111114 1px solid;
+}
+.news-article-title{
+    
+
+    color: #111111CC;
+    font-size:  38px;
+    font-weight: 900;
+}
+.news-article-sub_title{
+
+    color: #00000066;
+    font-size: 1.1rem;
+}
+
+// Show-news-content
+
+.news-article-content{
+    margin: 1rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .news-category{
+        color: #00000080;
+        font-family: arial, sans-serif;
+        font-size: 12.8px;
+        font-weight: 900;
+
+        margin-bottom: 3px;
+    }
+
+    .news-date{
+        color: #00000080;
+        font-family: arial, sans-serif;
+        font-size: 12.8px;
+
+        margin-top: 3px;
+        border-bottom: 0;
+    }
+
+    .section__footer{
+        height: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        .section__nav{
+            .link{
+                color: #11111180;
+                font-size: 12.8px;
+                text-transform: uppercase;
+            }
+            .link:hover{
+                color: #403F4C;
+                font-weight: bold;
+            }
+        }
+
+        .social{
+            width: 14.438rem;
+            
+            position: relative;
+            bottom: 0.2rem;
+            float: right;
+    
+            .social__caption{
+                display: flex;
+                position: relative;
+                top: 10px;
+                margin: 0 0.2em;
+                color: rgba(17,17,17,.5);
+                font-size: .7em;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+.most_read_container{
+    width: 60%;
+
+    margin: 0 auto;
+    padding: 0 1rem;
+    border: rgb(151, 151, 151) 0.08rem solid;
+
+    text-align: center;
+}
+
+.most_read_header{
+    margin-top: 0.5rem;
+
+    .most_read_header_title{
+        color: $primary-color;
+        font-size: 1.1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    
+        margin: 0%;
+    }
+    .most_read_header_subtitle{
+        color: $secondary-color;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.most_read_link{
+    display: flex;
+
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+    margin: 2rem 0;
+    border-bottom: $secondary-color 1px solid;
+
+    .most_read_place{
+        color: $secondary-color;
+        font-size: 1.7rem;
+        font-weight: 400;
+    }
+
+    .most_read_content_builder{
+        display: flex;
+        flex-direction: column;
+
+        text-align: left;
+
+        margin-left: 1rem;
+
+        .most_read_category{
+            margin-bottom: 0.2rem;
+
+            color: $secondary-color;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .most_read_title{
+            color: black;
+            font-size: 1.1rem;
+            font-weight: 500;
+
+            margin: 0%;
+        }
+    }
+}
+

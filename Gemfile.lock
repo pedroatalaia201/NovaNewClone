@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/thefalked/rails_admin_theme
+  revision: c7d57bce98fc81385778fce12147ff0f9ebbb65d
+  specs:
+    rails_admin_rollincode (1.3)
+      rails (>= 4.0, < 7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -158,7 +165,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
-    rails_admin (2.2.1)
+    rails_admin (2.1.1)
       activemodel-serializers-xml (>= 1.0)
       builder (~> 3.1)
       haml (>= 4.0, < 6)
@@ -264,6 +271,7 @@ DEPENDENCIES
   bootstrap-wysihtml5-rails
   bootstrap-wysihtml5-rails-font-awesome (~> 0.3.1.25)
   byebug
+  carrierwave
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
@@ -272,9 +280,10 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.0)
   rails (~> 5.0.7, >= 5.0.7.2)
-  rails_admin
+  rails_admin (~> 2.1.1)
   rails_admin_content_builder
   rails_admin_featured_content
+  rails_admin_rollincode!
   sass-rails (~> 5.0)
   sassc-rails (>= 2.1.0)
   spring

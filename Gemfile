@@ -17,16 +17,20 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Rails_Admin
-gem 'rails_admin'
+gem 'rails_admin', '~> 2.1.1'
 gem 'rails_admin_content_builder'
 gem 'rails_admin_featured_content'
 gem 'owlcarousel-rails' # For slides
+gem 'rails_admin_rollincode', git: 'https://github.com/thefalked/rails_admin_theme'
 
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem "bootstrap-wysihtml5-rails"
 gem "bootstrap-wysihtml5-rails-font-awesome", "~> 0.3.1.25"
+
+# Upload Files
+gem 'carrierwave'
 
 
 group :development, :test do

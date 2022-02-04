@@ -10,16 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220202205805) do
+ActiveRecord::Schema.define(version: 20220204174330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "content_builder_archives", force: :cascade do |t|
+    t.string   "name"
+    t.string   "file"
+    t.integer  "content_builder_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["content_builder_id"], name: "index_content_builder_archives_on_content_builder_id", using: :btree
+  end
 
   create_table "content_builder_categories", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "content_builder_count_reads", force: :cascade do |t|
+    t.integer  "content_builder_id"
+    t.string   "ip"
+    t.string   "string"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["content_builder_id"], name: "index_content_builder_count_reads_on_content_builder_id", using: :btree
   end
 
   create_table "content_builder_images", force: :cascade do |t|
@@ -60,6 +78,8 @@ ActiveRecord::Schema.define(version: 20220202205805) do
     t.datetime "updated_at",                 null: false
   end
 
+  add_foreign_key "content_builder_archives", "content_builders"
+  add_foreign_key "content_builder_count_reads", "content_builders"
   add_foreign_key "content_builder_images", "content_builders"
   add_foreign_key "content_builders", "content_builder_categories"
   add_foreign_key "featured_content_images", "featured_contents"

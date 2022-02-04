@@ -5,6 +5,7 @@ RailsAdmin.config do |config|
     end
 
     config.model 'RailsAdminContentBuilder::ContentBuilder' do
+      visible false # evita que fique duplicada na pag admin
       list do
         field :id
         field :title
@@ -21,6 +22,7 @@ RailsAdmin.config do |config|
     end
 
     config.model 'RailsAdminContentBuilder::ContentBuilderCategory' do
+      visible false
       list do
         field :id
         field :name

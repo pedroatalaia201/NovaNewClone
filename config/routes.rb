@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-  root to: "home#index"
-  get 'home/index'
-
-  get 'news/index'
-
-  get 'news/show'
-
-  get 'news/list'
+  get 'announce/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root to: "home#index"
+
+  # News_Paths
+  get "noticias" => "news#index", as: :news
+  get "noticias/:category" => "news#list_by_category", as: :news_by_category
+  get "noticias/:category/:slug" => "news#show", as: :news_show
+
 end

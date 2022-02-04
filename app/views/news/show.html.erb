@@ -1,2 +1,12 @@
-<h1>News#show</h1>
-<p>Find me in app/views/news/show.html.erb</p>
+<div class = "news-article">
+    <header class = "news-article-header">
+        <%= render "news/show_content_header", news: @news %>
+    </header>  
+</div>
+<%= render "layouts/includes/social" %>
+
+<div class = "news-article-content">
+    <%= render "news/show_content", news: @news %>
+</div>
+
+

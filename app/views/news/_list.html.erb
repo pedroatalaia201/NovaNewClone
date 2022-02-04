@@ -1,0 +1,51 @@
+<%date_check = ""%> <!-- this string will start empty to match the conditional -->
+
+<% @news.each do |news|%>
+    <div class = "news-list">
+        <!-- This has to run at least one time to work -->
+        <% if date_check != format_time(news.date_publish) %>
+            <div class = "news-date">
+                <!--<span class = "icon--left"><%#= image_tag("calendar.png", class: "calendar")%></span>-->
+                <i class="far fa-calendar" id = "calendar"></i>
+                <%= format_time(news.date_publish) %>
+            </div>
+            <% date_check = format_time(news.date_publish) %>
+        <% end %>
+
+        <section class = "news-items">
+            <%= link_to news_show_path(news.category, news), class: "news-link-item" do %>
+                <div class = "news-time">
+                    <!--<span class = "time-icon"><%#= image_tag("clock.png", class: "calendar")%></span>-->
+                    <span class="far fa-clock"></span><%= news.hour_publish %>
+                </div>
+
+                <% if news.category.present? %>
+                    <h2 class = "news-category">
+                        <%= news.category.name %> &bull; <%#= news.subcategory.name %>
+                        <!-- &bull; is the bullet point -->
+                    </h2>
+                <% end %>
+
+                <% if news.cover_list.present? %>
+                    <div class = "news-contain">
+                        <!-- It's just an tag to put the image, i guess.... -->
+                        <figure class = "news-figure">
+                            <%= image_tag(news.cover_list, class: "news-fig-img")%>
+                        </figure>
+
+                        <div class = "news-text">
+                            <h1 class = "news-title">
+                                <%= strip_tags news.title %> <!-- dont ask me -->
+                            </h1>
+                            <% if news.summary.present? %>
+                                <p class = "news-summary">
+                                    <%= news.summary %>
+                                </p>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </section>
+    </div>
+<% end %>
