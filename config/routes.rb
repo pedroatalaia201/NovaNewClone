@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get "noticias/:category" => "news#list_by_category", as: :news_by_category
   get "noticias/:category/:slug" => "news#show", as: :news_show
 
+  get "anuncie" => "announce#index", as: :announce
 end

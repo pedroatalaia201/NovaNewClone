@@ -1,2 +1,76 @@
-<h1>Announce#index</h1>
-<p>Find me in app/views/announce/index.html.erb</p>
+<div class = "announce_container">
+    <h1 class = "announce_title">
+        ANUNCIE
+    </h1>
+
+    <p class = "announce_text">
+        Conheça os espaços disponíveis para anunciar sua marca.<br><br>
+        <strong>O formato dos banners exigido pelo site é GIF (.gif)</strong>, tornando possível a exibição de<br>
+        banners rotativos, flexíveis e, ao mesmo tempo, visíveis em dispositívos móveis.<br>
+        Agradeçemos a compreensão.
+    </p>
+
+    <h3 class = "announce_sub_title">
+        TOPO
+    </h3>
+
+    <p class = "announce_text">
+        Este espaço fica localizado logo abaixo do cabeçalho do site.<br>
+        <p class = "announce_text_list">
+            &bull; Preferencialmente 468x60px<br>
+            &bull; Randômico<br>
+            &bull; Visível na capa e nas páginas internas<br>
+            &bull; Visível em dispositivos móveis<br>
+        </p>
+    </p>
+
+    <h3 class = "announce_sub_title">
+        LATERAL
+    </h3>
+
+    <p class = "announce_text">
+        Este espaço fica localizado na lateral direita do site.<br>
+        <p class = "announce_text_list">
+            &bull; Preferencialmente 300x250px<br>
+            &bull; Randômico<br>
+            &bull; Visível na capa e nas páginas internas<br>
+        </p>
+    </p>
+
+    <h3 class = "announce_sub_title">
+        DESTAQUE    
+    </h3>
+
+    <p class = "announce_text">
+        Este espaço fica localizado na lateral esquerda do site, junto as notícias em destaque.<br>
+        <p class = "announce_text_list">
+            &bull; Preferencialmente 820x200px<br>
+            &bull; Randômico<br>
+            &bull; Visível apenas na capa<br>
+            &bull; Visível em dispositivos móveis<br>
+        </p>
+    </p>
+
+    <h3 class = "announce_sub_title">
+        NOTÍCIA
+    </h3>
+
+    <p class = "announce_text">
+        Este espaço fica localizado na parte inferior da notícia, na página de exibição da mesma.<br>
+        <p class = "announce_text_list">
+            &bull; Preferencialmente 820x200px<br>
+            &bull; Randômico<br>
+            &bull; Visível apenas na exibição da notícia<br>
+            &bull; Visível em dispositivos móveis<br>
+        </p>
+        Tem interesse em anúnciar sua marca? Entre em contato conosco!<br><br>
+    </p>
+
+    <div class = "announce_buttom">
+        <%= link_to root_path(), class: "announce_link" do %>
+            Quero Anunciar<span class="glyphicon glyphicon-export" id = "export-icon"></span></p>
+        <% end %>
+    </div>
+</div>
+
+
