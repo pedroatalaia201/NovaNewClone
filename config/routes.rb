@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'search/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -19,4 +21,8 @@ Rails.application.routes.draw do
 
   # OfficeHour_Path
   get "expediente" => "office_hour#index", as: :office_hour
+
+   #Search
+  get "busca" => 'search#index', as: :search
+  get "busca/resultados" =>  'search#search', as: :search_search
 end

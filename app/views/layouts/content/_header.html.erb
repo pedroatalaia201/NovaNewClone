@@ -4,7 +4,7 @@
     <div class = "container-header">
         <!-- MenuButtom -->
         <div class = "menu-buttom">
-            <span class = "glyphicon glyphicon-align-justify" id = "menu_icon"></span>
+            <span class = "ion-android-menu" id = "menu_icon"></span>
             <h7 class="menuBtn">MENU</h7>
         </div>
         <!-- SiteLogo -->
@@ -17,7 +17,7 @@
         <div class = "search-header">
             <%#= link_to(search_path(), class: "search-link") do %>
                 <span class = "search-text">
-                    Buscar  <span class ="glyphicon glyphicon-search"></span>
+                    Buscar  <span class = "header__icon ion-search"></span>
                 </span>
                 
             <%# end %>
@@ -35,8 +35,7 @@
       </div>
     
       <div class="icon-bar" hidden>
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">EDITORIAIS</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EDITORIAIS</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <% ContentBuilderCategory.all.order(:name).each do |category| %>
             <%= link_to category.name, news_by_category_path(category), class: "dropdown-item" %>
