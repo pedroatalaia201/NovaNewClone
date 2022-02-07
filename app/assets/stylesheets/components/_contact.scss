@@ -23,7 +23,7 @@ $white: #fff;
 
     .contact_text{
         color: $secondary-color;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 400;
     }
 }
@@ -50,7 +50,7 @@ $white: #fff;
     }
     
     .message_form_field{
-        position: absolute;
+        position: relative;
     }
 
     .form_text_area{
@@ -59,35 +59,42 @@ $white: #fff;
 
         border: #e0e0e0 1px solid;
         border-radius: 4px;
-        width: 100%;
+        width: 65%;
         min-height: 10rem;
 
         color: #777777;
         font-weight: 300;
     }
+
+    .submit_buttom{
+        //float: right !important;
+        //margin-left: auto;
+        margin-top: 2rem;
+    
+        width: 10.313rem;
+        height: 4rem;
+        
+        border: none;
+        border-radius: 4px;
+        
+        background-color: $primary-color;
+        color: $white;
+        
+        text-transform: uppercase;
+        line-height: 4rem;
+    }
+    .submit_buttom:hover{
+        background-color: #34333E;
+    }
+}
+#form_message{
+    display: flex;
+    flex-direction: column;
 }
 
-
-    
-
-
-.submit_buttom{
-    float: right !important;
-    margin-top: 1rem;
-
-    width: 6.313rem;
-    height: 3rem;
-    
-    border: none;
-    border-radius: 4px;
-    
-    background-color: $primary-color;
-    color: $white;
-    
-    text-transform: uppercase;
-    line-height: 3rem;
+.solid_block{
+    background-color: aliceblue;
+    position: relative;
 }
-.submit_buttom{
-    background-color: #34333E;
-}
+
 

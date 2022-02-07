@@ -22,10 +22,12 @@
         </div>
     </div>
     <!-- Message field -->
-        <div class = "form_field">
-            <%= f.label :message, "MENSAGEM*", class: "message_form_field" %>
-            <%= f.text_area :message, placeholder: "Descreva o que você deseja/precisa", class: "form_text_area", required: true %>
-        </div>
-    <!-- Buttom -->
-    <%= f.submit "Enviar", class: "submit_buttom" %>
+    <div class = "form_field" id = "form_message">
+        <%= f.label :message, "MENSAGEM*", class: "message_form_field" %>
+        <%= f.text_area :message, placeholder: "Descreva o que você deseja/precisa", class: "form_text_area", required: true %>
+
+        <!-- Buttom -->
+        <%= f.submit "Enviar", class: "submit_buttom" %>
+    </div>
 <% end %>
+<div class = "solid_block"></div>
