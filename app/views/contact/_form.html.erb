@@ -1,0 +1,31 @@
+<%= form_for @contact, url: create_contact_path, html: { class: "form" } do |f| %>
+    <!-- Name && Email field -->
+    <div class = "form_row">
+        <div class = "form_field">
+            <%= f.label :name, "NOME*" %>
+            <%= f.text_field :name, placeholder: "Como podemos te chamar?",class: "form-control", required: true %>
+        </div>
+        <div class = "form_field">
+            <%= f.label :email, "EMAIL*" %>
+            <%= f.text_field :email, placeholder: "Qual o seu e-mail para contato?", class: "form-control", required: true %>
+        </div>
+    </div>
+    <!-- Subject && Phone fields -->
+    <div class = "form_row">
+        <div class = "form_field">
+            <%= f.label :subject, "ASSUNTO*" %>
+            <%= f.text_field :subject, placeholder: "Sobre o que você quer falar?", class: "form-control", required: true %>
+        </div>
+        <div class = "form_field">
+            <%= f.label :phone, "TELEFONE*" %>
+            <%= f.text_field :phone, placeholder: "Tem um telefone para contato?", class: "form-control", required: true %>
+        </div>
+    </div>
+    <!-- Message field -->
+        <div class = "form_field">
+            <%= f.label :message, "MENSAGEM*", class: "message_form_field" %>
+            <%= f.text_area :message, placeholder: "Descreva o que você deseja/precisa", class: "form_text_area", required: true %>
+        </div>
+    <!-- Buttom -->
+    <%= f.submit "Enviar", class: "submit_buttom" %>
+<% end %>

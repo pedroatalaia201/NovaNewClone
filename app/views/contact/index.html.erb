@@ -1,0 +1,30 @@
+
+<%# if @contact.present? && @contact.errors.present? %>
+  <div class="container">
+    <div class="row justify-content-center my-3">
+      <%# @contact.errors.full_messages.each do |erro| %>
+        <div class="col-12 col-md-4 pt-3">
+          <div id="message" class="alert alert-danger fade in show">
+            <%# erro %>
+          </div>
+        </div>
+      <%# end %>
+    </div>
+  </div>
+<%# end %>
+
+<div class="contact_container">
+  <h1 class = "contact_title">
+    Contato
+  </h1>
+
+  <p class = "contact_text">
+    Estamos a sua disposição para esclarecer dúvidas, receber sugestões, elogios ou críticas.<br> 
+    Utilize o formulário abaixo para nos enviar uma mensagem.<br>
+    <span class = "ion-ios-telephone"></span> (67) 3441-9363 / <span class = "ion-social-whatsapp"></span> (67) 9 9984-1428<br>
+  </p>
+
+  <div class="row">
+    <%= render 'form' %>
+  </div>
+</div>
