@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'album/index'
+
+  get 'album/show'
+
   get 'search/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -25,4 +29,9 @@ Rails.application.routes.draw do
    #Search
   get "busca" => 'search#index', as: :search
   get "busca/resultados" =>  'search#search', as: :search_search
+
+  #Album_Path
+  get "fotos" => "album#index", as: :albuns
+  get "fotos/:slug" => "album#show", as: :album
+
 end

@@ -29,17 +29,13 @@ $secondary-color: #11111199;
     }
 
     .container_featured{
-        margin: 1rem auto 1rem 0;
+        margin: 2rem auto 1rem 0;
         width: 75%;
 
         .fc-tools{
             display: none;
         }
     }
-}
-
-.fc-link{
-    //background-color: rgb(234, 71, 84);
 }
 
 // Climate
@@ -112,6 +108,31 @@ $secondary-color: #11111199;
     }
 }
 
+// Featured_Content
+.fc-slide__content{
+    position: relative;
+    bottom: 5rem;
 
+    color: #fff;
 
+    padding: 0 0.5rem 0.5rem 1rem;
+    h1{
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+.fc-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+.fc-text{
+    display: none;
+}
+.owl-pagination{
+    position: relative;
+    bottom: 6rem;
+    margin-bottom: 2rem;
+}
 

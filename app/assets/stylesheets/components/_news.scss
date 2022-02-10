@@ -290,6 +290,8 @@ $secondary-color: #11111199;
 }
 
 .most_read_link{
+    text-decoration: none;
+
     display: flex;
 
     padding: 0 1rem;
@@ -322,11 +324,17 @@ $secondary-color: #11111199;
 
         .most_read_title{
             color: black;
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-size: 1.2rem;
+            font-weight: 700;
 
             margin: 0%;
         }
     }
 }
+.most_read_link:hover{
+    .most_read_title{
+        text-decoration: underline;
+    }
+}
+
 

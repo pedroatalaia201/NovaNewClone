@@ -1,0 +1,37 @@
+<div class = "album_container">
+  <div class = "album_feed">
+    <div class = "album_show_header">
+      <p class = "album_date_publish">
+        Publicado em <%= @album.date_album %>
+      </p>
+      <h1 class = album_page_title>
+        <%= @album.name.to_s() %>
+      </h1>
+      <p class = "album_summary">
+        <%= @album.description.to_s() %>
+      </p>
+    </div>
+
+    <div class="fotorama">
+      <% @album.photos_order.each do |photo| %>
+        <%= image_tag photo.image, class: 'album_image' %>
+      <% end %>
+    </div>
+
+    <div class="section__footer">
+      <div class="section__nav">
+        <!-- 
+          the link_to :back wil generate <a href="javascript:history.back()">voltar</a> 
+          with this you'll go to the previus page in the browser history.
+        -->
+        <%= link_to :back, class: 'link link--left link--tiny' do %>
+          <span class="icon--left ion-ios-arrow-thin-left"></span> Voltar
+        <% end %>
+
+        <%= render "layouts/includes/social" %>
+      </div>
+    </div>
+
+    <%= render "list" %>
+  </div>
+</div>

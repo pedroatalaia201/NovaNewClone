@@ -57,7 +57,10 @@ RailsAdmin.config do |config|
           inline_edit false
         end
         field :summary
-        field :content_builder_archives
+        field :content_builder_archives do
+          inline_add true
+          #inline_edit false
+        end
       end
     end
 
@@ -74,6 +77,30 @@ RailsAdmin.config do |config|
       end 
     end
 
+     # Albuns
+    config.model "Album" do
+      navigation_label "Galeria"
+      
+      list do
+        field :id
+        field :name
+        field :date_publish
+        field :status
+      end
+      edit do
+        field :name
+        field :date_publish
+        field :description, :wysihtml5 do
+          config_options toolbar: { fa: true, image: false }
+        end
+        field :photos do
+          inline_add true
+          #inline_edit false
+        end
+        field :status
+      end
+    end
+
     # Content_Builder_Archives
     config.model "ContentBuilderArchives" do 
       visible false
@@ -86,6 +113,14 @@ RailsAdmin.config do |config|
     # Content_Builder_Count_Read
     config.model "ContentBuilderCountRead" do 
       visible false
+    end
+
+    # Photo
+    config.model "Photo" do
+      visible false
+      edit do
+        field :image
+      end
     end
 
     ## With an audit adapter, you can add:

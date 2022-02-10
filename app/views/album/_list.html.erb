@@ -1,0 +1,22 @@
+<div class = "albums_list">
+    <% @albums.each do |i| %>
+        <%= link_to album_path(i.slug, i), id: "album_link", class: "album_link" do %>
+            <figure class = "album_cover_figure">
+                <%= image_tag(i.cover, class: "album_cover") %>
+            </figure>
+
+            <div class = "album_date_album">
+                <spam class = "ion-calendar icon--left"></spam> <!-- calendar icon -->
+                    <p class = "date_album">
+                        <%= i.date_album.to_s() %>
+                    </p>
+            </div>
+
+            <div class = "album_title">
+                <h5 class = "album_name">
+                    <%= i.name.to_s() %>
+                </h5>
+            </div>
+        <% end %>
+    <% end %>
+</div>

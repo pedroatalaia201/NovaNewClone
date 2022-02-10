@@ -24,18 +24,18 @@ class SearchController < ApplicationController
     conditional[:status] = true
 
     content_builder = ContentBuilder.search(q, operator: "and", where: conditional, order: order)
-    #albums = Album.search(q, order: order)
+    albums = Album.search(q, order: order)
 
     array_search = []
 
-    # albums.each do |n|
-    #   array_search << {
-    #     name: n.name,
-    #     slug: n.slug,
-    #     date_publish: n.date_publish.strftime("%d/%m/%Y"),
-    #     type: 2
-    #   }
-    # end
+    albums.each do |n|
+      array_search << {
+        name: n.name,
+        slug: n.slug,
+        date_publish: n.date_publish.strftime("%d/%m/%Y"),
+        type: 2
+      }
+    end
 
     content_builder.each do |n|
       array_search << {

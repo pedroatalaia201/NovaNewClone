@@ -54,7 +54,11 @@ $primary-color: #403F4C;
   
       position: relative;
       bottom: -0.1rem;
-  
+      
+      .search-link{
+        text-decoration: none;
+      }
+
       .search-text{
         color: #fff;
         font-weight: 600;

@@ -17,5 +17,29 @@
         <%= @featured.featured_sanitized %>
     </div>
 
-</div>
+    <script>
+        var elems = document.getElementsByClassName("fc-title");
+        var counter = 0;
 
+        for (var i = 0; i < elems.length; i++) {
+            //This method add a attribute to the HTML, in this case, a id:
+            elems[i].setAttribute('id', "featured_" + counter);
+            counter++;
+        }
+        
+        let slidesTitle = document.getElementsByClassName("fc-title fc-slide__title");
+
+        for(let i = 0; i < slidesTitle.length; i++){
+            slidesTitle[i].style.color = "white";
+        }
+    </script>
+    
+    <style>
+        /* This has to be the first element on the @featured.featured_sanitized */
+
+        #featured_0{
+            background: #e83a48;
+            color: #fff;
+        }
+    </style>
+</div>

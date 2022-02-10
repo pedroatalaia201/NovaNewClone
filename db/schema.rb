@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220204200805) do
+ActiveRecord::Schema.define(version: 20220210190852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "slug"
+    t.boolean  "status"
+    t.datetime "date_publish"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -88,9 +98,18 @@ ActiveRecord::Schema.define(version: 20220204200805) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_photos_on_album_id", using: :btree
+  end
+
   add_foreign_key "content_builder_archives", "content_builders"
   add_foreign_key "content_builder_count_reads", "content_builders"
   add_foreign_key "content_builder_images", "content_builders"
   add_foreign_key "content_builders", "content_builder_categories"
   add_foreign_key "featured_content_images", "featured_contents"
+  add_foreign_key "photos", "albums"
 end

@@ -1,2 +1,0 @@
-module OfficeHourHelper
-end

@@ -1,0 +1,50 @@
+<% content = ContentBuilderCountRead.all %>
+
+<% if content.present? %>
+    <div class = "most_read_container">
+        <div class = "most_read_header">
+            <h1 class = "most_read_header_title">
+                Mais Lidas
+            </h1>
+            <p class = "most_read_header_subtitle">
+                da semana
+            </p>
+        </div>
+            
+        <% last = most_read_of_the_week.last().slug %>
+        <script>
+            const last = '<%= last %>';
+            let current = "";
+        </script>
+        <!-- 
+            The .each_with_index allow you to interact with the index(element position in the array),
+            typing a second variable in the || 
+
+            Ex: most_read.each_with_index do |most, index| ....
+        -->
+        <% most_read_of_the_week.each_with_index do |news, i| %>  <!-- In this case "i" is the index of the array -->
+            <%= link_to news_show_path(news.category.slug, news.slug), id: i+1, class: "most_read_link" do %>
+                <h1 class = "most_read_place"> <%= i + 1 %> </h1>
+
+                <div class = "most_read_content_builder">
+                    <p class = "most_read_category">
+                        <%= news.category.name %>
+                    </p>
+                    <p class = "most_read_title">
+                        <%= news.title %>
+                    </p>
+                </div>
+
+                <script>
+                    current =  '<%= news.slug %>';
+
+                    if (last == current){
+                        const link = document.getElementById("5");
+
+                        link.style.border = "white 1px solid";
+                    }
+                </script>
+            <% end %>
+        <% end %>            
+    </div>
+<% end %>
