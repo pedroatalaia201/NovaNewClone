@@ -1,3 +1,117 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #403F4C;
+$secondary-color: #11111199;
+
+.home_container{
+    width: 50%;
+    margin: 0 auto;
+
+    .home_header{
+        display: flex;
+        flex-direction: row;
+
+        justify-content: space-between;
+        border-bottom: #666666 1px solid;
+        height: 3.75rem;
+        //align-items: baseline;
+
+        .date, .climate_field{
+            font-size: 0.9rem;
+            color: #666666;
+        
+            height: 3.75rem;
+            line-height: 3.75rem;
+            // both .date and .climate_field has to fit on .home_header
+        }
+    }
+
+    .container_featured{
+        margin: 1rem auto 1rem 0;
+        width: 75%;
+
+        .fc-tools{
+            display: none;
+        }
+    }
+}
+
+.fc-link{
+    //background-color: rgb(234, 71, 84);
+}
+
+// Climate
+.climate_field{
+    position: relative;
+    float: right;
+
+    height: 3.75rem;
+    width: auto;
+}
+.aside__item{
+    position: relative;
+    float: right;
+
+    .aside__header{
+        float: left;
+    
+        padding: 0.4rem 0rem;
+        margin: 0rem 0.25rem;
+    
+        width: 40%;
+
+        .aside__title{
+            margin: 0;
+        
+            font-size: 0.7rem;
+            color: $primary-color;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .aside__caption{
+            font-size: 0.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1rem;
+        
+            margin:0rem 0rem 0.25rem 0rem; // aways in clockwise  ^ > v <
+        }
+    }
+}
+
+.climate{
+    display: flex;
+    flex-direction: row;
+    height: 3.75rem;
+    width: auto;
+    margin: 0;
+    float: right;
+
+    .climate__range{
+        font-size: 14px;
+        font-weight: 700;
+    
+        margin: 0 0.25rem 0 0;
+    
+        display: block;
+    }
+
+    .climate__text{
+        line-height: 1rem;
+        padding: 0 0.2rem 0 0;
+    
+        p{
+            margin: 0;
+    
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+    }
+}
+
+
+
+

@@ -5,6 +5,8 @@ RailsAdmin.config do |config|
     end
 
     config.model 'RailsAdminFeaturedContent::FeaturedContent' do
+      navigation_label "Destaques"
+      label "Notícias em Destaque"
       list do
         field :id
         field :title

@@ -1,3 +1,21 @@
-<div class = "container" style = "width: 50%; margin: 1rem auto;">
-    <%= @featured.featured_sanitized %>
+<div class = "home_container">
+    <div class = home_header>
+        <div class = "date">
+            <p class = "home_date">
+                <span class = "icon--left ion-calendar"></span>
+                <%= @time.strftime("%A") %>, <%= @time.day() %> de <%= @time.strftime("%B") %> de <%= @time.year() %>
+            </p>
+        </div>
+
+        <div class = "climate_field">
+          <%= render "layouts/includes/climate"%>
+        </div>
+    </div>
+
+
+    <div class = "container_featured">
+        <%= @featured.featured_sanitized %>
+    </div>
+
 </div>
+

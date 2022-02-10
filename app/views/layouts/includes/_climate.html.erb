@@ -1,0 +1,40 @@
+<%# expira a cada 15 min, e atualiza o clima-tempo %>
+<% cache 'data_clima_tempo', expires_in: 15.minutes, skip_digest: true do %> 
+    <% result = data_clima_tempo('456361') %>
+    <% if result['temp'] > 0 %>
+        <aside class="aside__item aside__item--climate">
+            <div class="aside__header">
+                <h1 class="aside__title">
+                    PREVISÃO DO TEMPO
+                </h1>
+                <p class="aside__caption">
+                    <%= result['city_name'] %>
+                </p>
+            </div>
+
+            <div class="climate">
+                <!--<span class="climate__icon wi wi-yahoo-<%#= result['condition_code'] %>"></span>-->
+
+                <div class="climate__range">
+                    <div class="climate__min">
+                        <div>
+                            <span class="icon--left ion-arrow-down-c"></span>
+                            <%= result['forecast'][0]['min'] %>&deg; min
+                        </div>
+                    </div>
+
+                    <!--<div class="climate__max">
+                        <div>
+                            <span class="icon--left ion-arrow-up-c"></span>
+                            <%#= result['forecast'][0]['max'] %>&deg; máx
+                        </div>
+                    </div>-->
+                </div>
+
+                <div class="climate__text">
+                    <p><%= result['description'] %></p>
+                </div>
+            </div>
+        </aside>
+    <% end %>
+<% end %>
