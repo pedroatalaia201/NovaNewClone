@@ -39,7 +39,7 @@
                     current =  '<%= news.slug %>';
 
                     if (last == current){
-                        const link = document.getElementById("5");
+                        const link = document.getElementById(<%= i + 1 %>);
 
                         link.style.border = "white 1px solid";
                     }

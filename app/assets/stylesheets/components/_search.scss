@@ -69,6 +69,17 @@ $secondary-color: #11111199;
 
         font-size: large;
         color: $secondary-color;
+
+        width: 7rem;
+        line-height: 3rem;
+
+        /* Serach_Icon */
+        .header__icon{
+            position: relative;
+            float: right;
+            margin: 0 1rem 0 1rem;
+            font-size: 1.5rem;
+        }
     }
 }
 

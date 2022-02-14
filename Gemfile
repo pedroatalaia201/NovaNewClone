@@ -24,8 +24,6 @@ gem 'owlcarousel-rails' # For slides
 gem 'rails_admin_rollincode', git: 'https://github.com/thefalked/rails_admin_theme'
 
 # Bootstrap
-# gem 'bootstrap-sass', '~> 3.4.1'
-# gem 'sassc-rails', '>= 2.1.0'
 gem "bootstrap-wysihtml5-rails"
 gem "bootstrap-wysihtml5-rails-font-awesome", "~> 0.3.1.25"
 
