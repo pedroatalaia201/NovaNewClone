@@ -1,0 +1,24 @@
+<% if !videos.present? %>
+    <h3 class = "video_empty">
+        Ainda não temos nenhum vídeo cadastrado.
+    </h3>
+<% else %>
+    <div class = "video_list">
+        <% for video in videos %>
+            <%= link_to(video_show_path(video), class:"video_link") do %>
+                <figure class = "video_thumb">
+                    <%#= video.link.cover %>      <!-- To do -->
+                </figure>
+
+                <div class = "video_date_place">
+                    <span class = "icon--left ion-calendar"></span>
+                    <%= video.date_publish.strftime("%d/%m/%Y") %>
+                </div>
+
+                <h4 class = video_small_title>
+                    <%= video.title %>
+                </h4>
+            <% end %>
+        <% end %>
+    </div>
+<% end %>

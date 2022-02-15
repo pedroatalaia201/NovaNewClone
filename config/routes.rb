@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'album/index'
-
-  get 'album/show'
-
-  get 'search/index'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -33,5 +27,10 @@ Rails.application.routes.draw do
   #Album_Path
   get "fotos" => "album#index", as: :albuns
   get "fotos/:slug" => "album#show", as: :album
+
+  #Video_Path
+  get "videos" => "video#index", as: :videos
+  get "video/:slug" => "video#show", as: :video_show
+  get "video/list"
 
 end

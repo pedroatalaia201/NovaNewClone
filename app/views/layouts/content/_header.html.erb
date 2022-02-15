@@ -26,31 +26,40 @@
 <!--/Navbar-->
 
 <!-- Hidden Nav-Bar -->
-<div class = "collapse-hidden navbar-collapse" id = "hidden-navbar" >
+<div class = "collapse-hidden navbar-collapse" id = "hidden-navbar" data-turbolinks = "false">
     <div class = "container">
 
       <div class = "icon-bar" hidden >
-        <a class = "icon-link" href = <%= root_path()%>>CAPA</a>
+        <%= link_to("CAPA", root_path(), class: "icon-link")%>
       </div>
-    
-      <div class="icon-bar" hidden>
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EDITORIAIS</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <% ContentBuilderCategory.all.order(:name).each do |category| %>
-            <%= link_to category.name, news_by_category_path(category), class: "dropdown-item" %>
-          <% end %>
+
+      <div class = "icon-bar" hidden>
+        <div class="dropdown show">
+          <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            EDITORIAIS
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <% ContentBuilderCategory.all.order(:name).each do |category| %>
+              <%= link_to(category.name, news_by_category_path(category), class: "dropdown-item") %>
+            <% end %>
+          </div>
         </div>
       </div>
 
-      <div class = "icon-bar" hidden >
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">MULTIMIDIAS</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href=<%= albuns_path() %>>Festas & Eventos</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+      <div class = "icon-bar" hidden>
+        <div class="dropdown show">
+          <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            MULTIMÍDIAS
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to("Notícias", news_path(), class: "dropdown-item") %>
+            <%= link_to("Festas & Eventos", albuns_path(), class: "dropdown-item") %>
+            <%= link_to("Vídeos", videos_path(), class: "dropdown-item") %>
+          </div>
         </div>
-      </div>  
+      </div>
 
       <div class = "icon-bar" hidden >
         <%= link_to "ANUNCIE", announce_path(), class: "icon-link" %>

@@ -101,6 +101,24 @@ RailsAdmin.config do |config|
       end
     end
 
+    config.model "Video" do
+      navigation_label "Videos"
+
+      list do
+        field :id
+        field :title
+        field :date_publish
+      end
+      edit do
+        field :title
+        field :description, :wysihtml5 do
+          config_options toolbar: {fa: true, image: false}
+        end
+        field :date_publish
+        field :link
+      end
+    end
+
     # Content_Builder_Archives
     config.model "ContentBuilderArchives" do 
       visible false
