@@ -5,15 +5,15 @@
 <% else %>
     <div class = "video_list">
         <% for video in videos %>
-            <%= link_to(video_show_path(video), class:"video_link") do %>
-                <figure class = "video_thumb">
-                    <%#= video.link.cover %>      <!-- To do -->
+            <%= link_to(video_show_path(video, video.slug), class:"video_link") do %>
+                <figure class = "video_figure">
+                    <%= image_tag(video.get_thumb(), class: "video_small_thumb") %>
                 </figure>
 
-                <div class = "video_date_place">
+                <p class = "video_date_place">
                     <span class = "icon--left ion-calendar"></span>
                     <%= video.date_publish.strftime("%d/%m/%Y") %>
-                </div>
+                </p>
 
                 <h4 class = video_small_title>
                     <%= video.title %>

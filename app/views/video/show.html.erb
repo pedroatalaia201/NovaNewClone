@@ -1,2 +1,21 @@
-<h1>Video#show</h1>
-<p>Find me in app/views/video/show.html.erb</p>
+<div class = "video_container">
+    <div class = "video_page_content">
+        <div class = "video_content">
+            <p class = "video_date_place">
+                Publicado em <%= @video.date_publish.strftime("%d/%m/%Y") %>
+            </p>
+
+            <h1 class = "video_title">
+                <%= @video.title %>
+            </h1>
+
+            <% if @video.description.present? %>
+                <p class = "video_description">
+                    <%= @video.description.to_s() %>
+                </p>
+            <% end %>
+
+            <iframe width="560" height="315" class = "video_embed" src = <%= @video.get_embed() %> allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

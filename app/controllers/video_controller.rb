@@ -3,10 +3,7 @@ class VideoController < ApplicationController
     @videos = Video.all().where("date_publish <= ?", Time.now())
   end
 
-  def list
-    
-  end
-
   def show
+    @video = Video.find_by_slug(params[:slug])
   end
 end

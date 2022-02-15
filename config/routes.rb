@@ -31,6 +31,6 @@ Rails.application.routes.draw do
   #Video_Path
   get "videos" => "video#index", as: :videos
   get "video/:slug" => "video#show", as: :video_show
-  get "video/list"
+  
 
 end
