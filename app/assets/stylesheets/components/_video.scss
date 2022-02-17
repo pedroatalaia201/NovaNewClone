@@ -1,0 +1,83 @@
+$primary-color: #403F4C;
+$secondary-color: #11111199;
+
+.video_container{
+    width: 50%;
+    margin: 1rem auto;
+
+    .video_page_content{
+        width: 70%!important;
+        height: auto;
+        margin-right: auto;
+        border-top: $primary-color 2px solid;
+
+        .video_page_tile, .video_empty{
+            color: $primary-color;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            padding: 0.5rem 0rem;
+        }
+
+        .video_empty{
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.video_list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 2rem 0rem;
+
+    width: 100%;
+    transform: translateY(-47%); //move on Y ^
+
+    .video_link{
+        text-decoration: none;
+
+        padding-bottom: 1.5rem;
+        margin: 0 1rem 1.5rem 0;
+        border-bottom: rgba(17,17,17,.1) 1px solid;
+
+        .video_figure{
+            width: 12.5rem;
+            height: auto;
+
+            margin-bottom: 0.5rem;
+
+            .video_small_thumb{
+                width: inherit;
+            }
+        }
+
+        .video_date_place{
+            font-size: 0.8rem;
+            color: $secondary-color;
+
+            margin-bottom: 0.2rem;
+        }
+
+        .video_small_title{
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: black;
+        }
+    }
+}
+
+.most_read_on_video{
+    width: 50%;
+    margin: 0rem;
+
+    position: relative;
+    float: right;
+    left: 16%;
+    top: auto;  
+
+    font-size: 0.8rem !important;
+}

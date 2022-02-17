@@ -36,7 +36,8 @@ class Video < ApplicationRecord
             id = url_thumb.slice! "https://www.youtube.com/watch?v="
         end
 
-        thumbnail = "http://i1.ytimg.com/vi/"+ url_thumb.to_s() +"/hqdefault.jpg"
-        #http://i1.ytimg.com/vi/ouncVBiye_M/hqdefault.jpg # current embed image thumbnail
+        thumbnail = "http://i1.ytimg.com/vi/"+ url_thumb.to_s() +"/maxresdefault.jpg"
+        # thumbnail = "http://i1.ytimg.com/vi/"+ url_thumb.to_s() +"/hqdefault.jpg" 
+        # the "hqdefault.jpg" has a black margin
     end
 end
