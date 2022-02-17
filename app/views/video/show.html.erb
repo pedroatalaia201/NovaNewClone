@@ -1,21 +1,31 @@
 <div class = "video_container">
+    <span class = "most_read_on_video_show">
+        <%= render "news/most_read" %>
+    </span>
+
     <div class = "video_page_content">
         <div class = "video_content">
-            <p class = "video_date_place">
-                Publicado em <%= @video.date_publish.strftime("%d/%m/%Y") %>
-            </p>
-
-            <h1 class = "video_title">
-                <%= @video.title %>
-            </h1>
-
-            <% if @video.description.present? %>
-                <p class = "video_description">
-                    <%= @video.description.to_s() %>
+            <div style = "text-align: center;">
+                <p class = "video_date">
+                    Publicado em <%= @video.date_publish.strftime("%d/%m/%Y") %>
                 </p>
-            <% end %>
 
-            <iframe width="560" height="315" class = "video_embed" src = <%= @video.get_embed() %> allowfullscreen></iframe>
+                <h1 class = "video_title">
+                    <%= @video.title %>
+                </h1>
+
+                <% if @video.description.present? %>
+                    <p class = "video_description">
+                        <%= @video.description.to_s() %>
+                    </p>
+                <% end %>
+            </div>
+
+            <div class = "video_video">
+                <iframe width="560" height="360" class = "video_embed" src = <%= @video.get_embed() %> allowfullscreen></iframe>
+            </div>
         </div>
+
+        <%= render "layouts/includes/social_footer" %>
     </div>
 </div>

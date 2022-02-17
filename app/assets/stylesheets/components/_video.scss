@@ -70,14 +70,60 @@ $secondary-color: #11111199;
     }
 }
 
-.most_read_on_video{
-    width: 50%;
+.video_content{
+    padding: 0.5rem 0;
+    text-align: center;
+
+    .video_date{
+        color: $secondary-color;
+        font-size: 0.8rem;
+
+        margin-bottom: 0.2rem;
+    }
+
+    .video_title{
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: $primary-color;
+    }
+
+    .video_description{
+        font-size: 1.3rem;
+        color: rgba(0,0,0,.4);
+
+    }
+
+    .video_video{
+        padding: 2rem 0;
+        margin: 2rem auto;
+        border-top: rgba(0,0,0,.1) 1px solid;
+
+        //width: 560px;
+        align-self: center;
+
+        .video_embed{
+            width: 100%;
+        }
+    }
+}
+
+.most_read_on_video, .most_read_on_video_show{
+    width: 40%;
     margin: 0rem;
 
     position: relative;
+    z-index: 2;
     float: right;
     left: 16%;
     top: auto;  
 
-    font-size: 0.8rem !important;
+    .mostread_container{
+        margin: 0; 
+    }
+}
+.most_read_on_video_show{
+    position: absolute;
+    left: 60%;
+
+    width: 20%;
 }
