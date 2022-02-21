@@ -57,10 +57,7 @@ RailsAdmin.config do |config|
           inline_edit false
         end
         field :summary
-        field :content_builder_archives do
-          inline_add true
-          #inline_edit false
-        end
+        field :content_builder_archives 
       end
     end
 

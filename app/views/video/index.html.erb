@@ -1,7 +1,9 @@
 <div class = "video_container">
-    <div class = "most_read_on_video">
+    <div class = "generic_most_read">
         <%= render "news/most_read" %>
     </div>
+    <!-- Change font os most_read -->
+    <%= render "video/script" %>
 
     <div class = "video_page_content">
         <h1 class = "video_page_tile">
@@ -12,13 +14,5 @@
     </div>
 </div>
 
-<!-- Change font os most_read -->
-<script>
-    const title = document.getElementsByClassName("most_read_title");
 
-    console.log(title);
 
-    for(let i = 0; i < title.length; i++){
-        title[i].style.fontSize = "0.8rem";
-    }
-</script>

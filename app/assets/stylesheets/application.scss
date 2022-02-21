@@ -22,3 +22,19 @@
 //@import "base/variables"; // doesn't work...why?
 @import "base/header";
 
+
+// Most_read
+.generic_most_read{
+    width: 20%;
+    margin: 0rem;
+
+    position: absolute;
+    z-index: 2;
+    float: right;
+    left: 60%;
+    top: auto;  
+
+    .mostread_container{
+        margin: 0; 
+    }
+}

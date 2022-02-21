@@ -35,7 +35,7 @@ $secondary-color: #11111199;
     margin: 2rem 0rem;
 
     width: 100%;
-    transform: translateY(-47%); //move on Y ^
+    transform: translateY(10%); //move on Y ^
 
     .video_link{
         text-decoration: none;
@@ -107,23 +107,4 @@ $secondary-color: #11111199;
     }
 }
 
-.most_read_on_video, .most_read_on_video_show{
-    width: 40%;
-    margin: 0rem;
 
-    position: relative;
-    z-index: 2;
-    float: right;
-    left: 16%;
-    top: auto;  
-
-    .mostread_container{
-        margin: 0; 
-    }
-}
-.most_read_on_video_show{
-    position: absolute;
-    left: 60%;
-
-    width: 20%;
-}
