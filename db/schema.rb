@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220215201707) do
+ActiveRecord::Schema.define(version: 20220222132740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 20220215201707) do
     t.datetime "date_publish"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "classified_images", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "classified_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["classified_id"], name: "index_classified_images_on_classified_id", using: :btree
+  end
+
+  create_table "classifieds", force: :cascade do |t|
+    t.string   "title"
+    t.decimal  "price"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "description"
+    t.string   "slug"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -116,6 +136,7 @@ ActiveRecord::Schema.define(version: 20220215201707) do
     t.string   "slug"
   end
 
+  add_foreign_key "classified_images", "classifieds"
   add_foreign_key "content_builder_archives", "content_builders"
   add_foreign_key "content_builder_count_reads", "content_builders"
   add_foreign_key "content_builder_images", "content_builders"
