@@ -3,19 +3,21 @@
         Ainda não há nenhum item cadastrado...
     </h3>
 <% else %>
-    <% @classifieds.each do |item| %>
-        <%= link_to(classified_path(item.slug), class: "classified_link") do %>
-            <figure class = "classified_figure">
-                <% image_tag(item.image, class: "classified_small_image") %>
-            </figure>
+    <div class = "classified_list">
+        <% @classifieds.each do |item| %>
+            <%= link_to(classified_show_path(item.slug), class: "classified_link") do %>
+                <figure class = "classified_figure">
+                    <% image_tag(item.image, class: "classified_small_image") %>
+                </figure>
 
-            <h3 class = "classified_small_title">
-                <%= item.tile.to_s() %>
-            </h3>
+                <h3 class = "classified_small_title">
+                    <%= item.tile.to_s() %>
+                </h3>
 
-            <p class = "classified_small_price">
-                <%= item.price.to_s() %>
-            </p>
+                <p class = "classified_small_price">
+                    <%= item.price.to_s() %>
+                </p>
+            <% end %>
         <% end %>
-    <% end %>
+    </div>
 <% end %>

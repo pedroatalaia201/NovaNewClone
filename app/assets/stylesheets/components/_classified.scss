@@ -10,12 +10,23 @@ $secondary-color: #11111199;
         height: auto;
         margin-right: auto;
         border-top: $primary-color 2px solid;
+
+        .empty_message{
+            font-size: 1.5rem;
+            font-weight: 500;
+        
+            margin-top: 1rem;
+        }
     }
 }
 
 .header{
     display:flex;
     justify-content: space-between;
+
+    margin: 0rem 0 2rem 0;
+    line-height: 1rem;
+    padding: 0.8rem 0;
 
     .page_title, .empty_message{
         line-height: inherit;
@@ -27,10 +38,6 @@ $secondary-color: #11111199;
 
         padding: 0.5rem 0rem;
     }
-    .empty_message{
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
 
     .header_link{
         text-decoration: none;
@@ -40,4 +47,14 @@ $secondary-color: #11111199;
 
         margin-top: 0.3rem;
     }
+}
+
+.classified_list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.classified_text{
+    color: $secondary-color;
+    font-size: 1rem;
 }
