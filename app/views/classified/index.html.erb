@@ -1,0 +1,14 @@
+<div class = "classified_container">
+    <div class = "classified_content">
+
+        <div class = "header">
+            <h1 class = "page_title">
+                Classificados
+            </h1>
+
+            <%= link_to("Quero Anunciar", classified_new_path(), class: "header_link") %>
+        </div>
+
+        <%= render "classified/list" %>
+    </div>
+</div>

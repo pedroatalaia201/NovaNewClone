@@ -1,0 +1,43 @@
+$primary-color: #403F4C;
+$secondary-color: #11111199;
+
+.classified_container{
+    width: 50%;
+    margin: 1rem auto;
+
+    .classified_content{
+        width: 70%!important;
+        height: auto;
+        margin-right: auto;
+        border-top: $primary-color 2px solid;
+    }
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+
+    .page_title, .empty_message{
+        line-height: inherit;
+
+        color: $primary-color;
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+
+        padding: 0.5rem 0rem;
+    }
+    .empty_message{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .header_link{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $primary-color;
+        font-size: 1rem;
+
+        margin-top: 0.3rem;
+    }
+}

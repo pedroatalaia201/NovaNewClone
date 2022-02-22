@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # OfficeHour_Path
   get "expediente" => "office_hour#index", as: :office_hour
 
-   #Search
+  #Search
   get "busca" => 'search#index', as: :search
   get "busca/resultados" =>  'search#search', as: :search_search
 
@@ -32,5 +32,8 @@ Rails.application.routes.draw do
   get "videos" => "video#index", as: :videos
   get "video/:slug" => "video#show", as: :video_show
   
-
+  #Classified_Path
+  get "classificados" => "classified#index", as: :classifieds
+  get "classificados/:slug" => "classified#show", as: :classified
+  get "classificados/novo" => "classified#new", as: :classified_new
 end

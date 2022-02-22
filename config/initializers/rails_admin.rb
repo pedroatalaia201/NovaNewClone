@@ -116,6 +116,19 @@ RailsAdmin.config do |config|
       end
     end
 
+    #Classified
+    config.model "Classified" do
+      navigation_label "Classificados"
+      label "Classificados"
+      
+      list do
+        field :id
+        field :title
+        field :price
+        field :name
+      end
+    end
+
     # Content_Builder_Archives
     config.model "ContentBuilderArchives" do 
       visible false
@@ -136,6 +149,11 @@ RailsAdmin.config do |config|
       edit do
         field :image
       end
+    end
+
+    #Classified_Image
+    config.model "CLassifiedImage" do
+      visible false
     end
 
     ## With an audit adapter, you can add:
