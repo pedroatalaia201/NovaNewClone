@@ -7,7 +7,11 @@
         <% @classifieds.each do |item| %>
             <%= link_to(classified_show_path(item.slug), class: "classified_link") do %>
                 <figure class = "classified_figure">
-                    <% image_tag(item.image, class: "classified_small_image") %>
+                    <% if item.image.present? %>
+                        <%= image_tag(item.image, class: "classified_small_image") %>
+                    <% else %>
+                        <%= image_tag("no_image.png", class: "classified_small_image") %>
+                    <% end %>
                 </figure>
 
                 <h3 class = "classified_small_title">

@@ -16,10 +16,9 @@ class ClassifiedController < ApplicationController
 
   def create
     @classified = Classified.new(classified_params)
-    @classified.save()
 
-    if @classified.save
-      p "It's saved"
+    if @classified.save()
+      create_images(params)
       redirect_to classifieds_path()
     else
       p "No, it's not"
@@ -37,6 +36,14 @@ class ClassifiedController < ApplicationController
   end
 
   private
+
+  def create_images(params)
+    if params[:classified][:classified_images].present?
+      params[:classified][:classified_images].each do |img|
+        @classified.classified_images.create(image: img)
+      end
+    end
+  end
 
   def classified_params
     params.require(:classified).permit(

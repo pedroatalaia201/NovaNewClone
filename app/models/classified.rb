@@ -6,11 +6,12 @@ class Classified < ApplicationRecord
 
     extend FriendlyId
       friendly_id :title, use: :slugged
-    def image
-        image = ClassifiedImage.where(classified_id: get_id)  
-    end
 
-    def get_id
-      self.id
+    def image
+      if !classified_images.empty?
+        classified_images.first.image
+      else
+        nil
+      end 
     end
 end

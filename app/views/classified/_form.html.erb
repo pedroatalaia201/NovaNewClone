@@ -34,12 +34,12 @@
     </div>
 
     <div class = "form_upload">
-        <%= f.label :image, "IMAGENS DO PRODUTO(ENVIAR NO MÁXIMO 4)" %>
+        <%= f.label :classified_attachments, "IMAGENS DO PRODUTO(ENVIAR NO MÁXIMO 4)" %>
 
-        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
-        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
-        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
-        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
+        <%= f.file_field :classified_attachments, name: "classified[classified_images][]", accept: 'image/png,image/jpeg', class: "form_upload_image" %>
+        <%= f.file_field :classified_attachments, name: "classified[classified_images][]", accept: 'image/png,image/jpeg', class: "form_upload_image" %>
+        <%= f.file_field :classified_attachments, name: "classified[classified_images][]", accept: 'image/png,image/jpeg', class: "form_upload_image" %>
+        <%= f.file_field :classified_attachments, name: "classified[classified_images][]", accept: 'image/png,image/jpeg', class: "form_upload_image" %>
     </div>
             
     <div class = "form_submit">
