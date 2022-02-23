@@ -35,6 +35,6 @@ Rails.application.routes.draw do
   #Classified_Path
   get "classificados" => "classified#index", as: :classifieds
   get "classificados/novo" => "classified#new", as: :classified_form
-  post "classificados/novo" => "classified#new", as: :classified_create
-  #get "classificados/:slug" => "classified#show", as: :classified_show
+  post "classificados/novo" => "classified#create", as: :classified_create
+  get "classificados/:slug" => "classified#show", as: :classified_show
 end

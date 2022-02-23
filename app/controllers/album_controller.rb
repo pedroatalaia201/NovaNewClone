@@ -1,16 +1,10 @@
 class AlbumController < ApplicationController
   def index
     @albums = Album.all.where("date_publish <= ?", DateTime.current).where(status: true).page(params[:page]).per(6)
-
-    page_info("Fotos")
-    @description = "Acesse pare ver as últimas fotos"
   end
 
   def show
     @album = Album.find_by_slug(params[:slug])
-
-    page_info(@album.name, @album.cover)
-    @description = "Acesse pare ver as fotos do #{@album.name}"
 
     if !@album.nil?
       @albums = Album.order("date_publish desc").where("id != #{@album.id}").limit(3)

@@ -1,0 +1,48 @@
+<%= form_for @classified, url: classified_create_path, html: { class: "form" }  do |f| %>
+    <div class = "form_field">
+        <%= f.label :title, "TÍTULO" %>
+        <%= f.text_field :title, placeholder: "O que você está vendendo", class: "form_input", required: true %>
+    </div>
+
+    <div class = "form_box">
+        <div class = "form_field">
+            <%= f.label :price, "PREÇO" %>
+            <%= f.text_field :price, placeholder: "Valor do produto(R$)", class: "form_input", required: true %>
+        </div>
+
+        <div class = "form_field">
+            <%= f.label :name, "NOME" %>
+            <%= f.text_field :name, placeholder: "Seu nome", class: "form_input", required: true %>
+        </div>
+    </div>
+
+    <div class = "form_box">
+        <div class = "form_field">
+            <%= f.label :phone, "TELEFONE" %>
+            <%= f.text_field :phone, placeholder: "Telefone para contato", class: "form_input", required: true %>
+        </div>
+
+        <div class = "form_field">
+            <%= f.label :email, "EMAIL" %>
+            <%= f.text_field :email, placeholder: "E-mail para contato", class: "form_input", required: true %>
+        </div>
+    </div>
+
+    <div class = "form_message">
+        <%= f.label :description, "DESCRIÇÃO" %>
+        <%= f.text_area :description, placeholder: "Informações sobre o produto", class: "form_input_description", required: true %>
+    </div>
+
+    <div class = "form_upload">
+        <%= f.label :image, "IMAGENS DO PRODUTO(ENVIAR NO MÁXIMO 4)" %>
+
+        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
+        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
+        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
+        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: "form_upload_image", required: true %>
+    </div>
+            
+    <div class = "form_submit">
+        <%= f.submit "Finalizar Cadastro", class: "submit" %>
+    </div>
+<% end %>
