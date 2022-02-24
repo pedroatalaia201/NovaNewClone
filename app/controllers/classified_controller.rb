@@ -4,7 +4,7 @@ class ClassifiedController < ApplicationController
   end
 
   def show
-    # There will be some stuff...
+    @classified = Classified.find_by_slug(params[:slug])
   end
 
   def new

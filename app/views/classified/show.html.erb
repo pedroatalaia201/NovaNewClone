@@ -1,2 +1,39 @@
-<h1>Classified#show</h1>
-<p>Find me in app/views/classified/show.html.erb</p>
+<div class = "classified_container">
+    <div class = "classified_content">
+        <div class = "header">
+            <h1 class = "page_title">
+                Classificados
+            </h1>
+
+            <%= link_to("Quero Anunciar", classified_form_path(), class: "header_link") %>
+        </div>
+
+        <% owner = @classified %>
+        <div class = "product_info">
+            <h1 class = "product_title">
+                <%= owner.title %>
+            </h1>
+
+            <p class = "product_line">
+                R$ <%= owner.price.to_s() %> 
+                <span class = "icon--left ion-android-person"></span> <%= owner.name %>
+                <span class = "icon--left ion-android-phone-portrait"></span> <%= owner.phone %>
+                <span class = "icon--left ion-android-mail"></span> <%= owner.email %>
+            </p>
+        </div>
+
+        <div class="fotorama" data-nav="thumbs" data-width="100%" data-click="false" data-keyboard="true" id = "fotorama_classified">
+            <% owner.product_images.each do |img| %>
+                <%= image_tag(img.image, class: 'product_image') %>
+            <% end %>
+        </div>
+
+        <div class = "product_description_box">
+            <p class = "description">
+                <%= owner.description %>
+            </p>
+        </div>
+
+        <%= render "layouts/includes/social_footer" %>
+    </div>
+</div>

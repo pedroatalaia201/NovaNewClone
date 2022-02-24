@@ -14,4 +14,8 @@ class Classified < ApplicationRecord
         nil
       end 
     end
+
+    def product_images
+      classified_images
+    end
 end
