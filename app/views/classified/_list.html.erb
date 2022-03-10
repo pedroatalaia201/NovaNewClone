@@ -19,9 +19,15 @@
                 </h3>
 
                 <p class = "classified_small_price">
-                    <%= item.price.to_s() %>
+                    <!-- format the decimal to the brazilian money format -->
+                    <%= item.number_to_currency_br(item.price) %>
                 </p>
             <% end %>
         <% end %>
     </div>
 <% end %>
+
+<script>
+    // clean the local storage for the classified/show page.
+    localStorage.clear();
+</script>

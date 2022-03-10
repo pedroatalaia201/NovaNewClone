@@ -6,7 +6,7 @@ class ClassifiedController < ApplicationController
   def show
     @classified = Classified.find_by_slug(params[:slug])
   end
-
+  
   def new
     @classified = Classified.new
   end
@@ -24,15 +24,6 @@ class ClassifiedController < ApplicationController
       p "No, it's not"
       redirect_to root_path()
     end
-    
-    #@classified.save()
-    # respond_to do |format|
-    #   if @classified.save
-    #     format.html {redirect_to classifieds_path()}
-    #   else
-    #     format.html {render :new} #vai tentar salvar novamente
-    #   end
-    # end
   end
 
   private

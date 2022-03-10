@@ -53,8 +53,116 @@ $secondary-color: #11111199;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    .classified_link{
+        text-decoration: none;
+        display: block;
+
+        margin: 1rem 1.5rem 1rem 0rem;// cima direita baixo esquerda
+        padding-bottom: 1.5rem;
+        border-bottom: lightgray 1px solid;
+
+        justify-content: space-between;
+
+        .classified_figure{
+            width: 12.125rem;
+            height: 110px;
+        
+            margin-bottom: 0.5rem;
+        
+            .classified_small_image{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .classified_small_title{
+            color: black;
+            font-size: 1.3rem;
+            font-weight: 500;
+
+            margin: 0;
+        }
+
+        .classified_small_price{
+            color: $secondary-color;
+            font-size: 0.9rem;
+        }
+    }
 }
+
+.product_info{
+    text-align: center;
+
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: lightgray 1px solid;
+
+    .product_title{
+        color: $primary-color;
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        margin: 0;
+    }
+
+    .product_line{
+        color: $secondary-color;
+        font-size: 1.1rem;
+
+        word-spacing: 10px;
+        margin: 0.5rem 0 0 0;
+    }
+}
+
+.fotorama{
+    background: black;
+    border: black 10px solid;
+
+    margin-bottom: 1rem;
+}
+.fotorama__stage{
+    max-width: 740px;   
+    max-height: 450px;
+}
+.fotorama__img{
+    top: 0 !important;
+}
+
+.product_description_box{
+    margin: 1.5rem 0;
+
+    .description{
+        color: $secondary-color;
+        font-size: 1.1rem;
+
+        margin: 0;
+    }
+}
+
+
 .classified_text{
     color: $secondary-color;
     font-size: 1rem;
+}
+.form{
+    //display: flex;
+
+    .form_field{
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 1.5rem;
+
+        .form_input{
+            height: 3rem;
+            line-height: 3rem;
+
+            padding: 0.2rem 0.3rem;
+            border: lightgray 1px solid;
+            border-radius: 8px;
+        }
+    }
 }

@@ -1,4 +1,11 @@
 <div class = "classified_container">
+    <!-- Most_Read -->
+    <div class = "generic_most_read">
+        <%= render "news/most_read" %>
+    </div>
+    <!-- Change font os most_read -->
+    <%= render "video/script" %>
+
     <div class = "classified_content">
         <div class = "header">
             <h1 class = "page_title">
@@ -15,14 +22,14 @@
             </h1>
 
             <p class = "product_line">
-                R$ <%= owner.price.to_s() %> 
-                <span class = "icon--left ion-android-person"></span> <%= owner.name %>
-                <span class = "icon--left ion-android-phone-portrait"></span> <%= owner.phone %>
-                <span class = "icon--left ion-android-mail"></span> <%= owner.email %>
+                <%= owner.number_to_currency_br(owner.price)%>
+                <span class = "icon--left ion-android-person"> <%= owner.name %></span>
+                <span class = "icon--left ion-android-phone-portrait"> <%= owner.phone %></span> 
+                <span class = "icon--left ion-android-mail"> <%= owner.email %></span> 
             </p>
         </div>
 
-        <div class="fotorama" data-nav="thumbs" data-width="100%" data-click="false" data-keyboard="true" id = "fotorama_classified">
+        <div class="fotorama" data-nav="thumbs" data-width="100%" data-click="false" data-keyboard="true">
             <% owner.product_images.each do |img| %>
                 <%= image_tag(img.image, class: 'product_image') %>
             <% end %>
@@ -37,3 +44,15 @@
         <%= render "layouts/includes/social_footer" %>
     </div>
 </div>
+
+<script>
+    // Once the page is "loaded" reload it again.
+    // Without this the fotorama wont be able to load the images.
+    var refresh = window.localStorage.getItem('refresh');
+    console.log(refresh);
+
+    if (refresh === null || refresh === 0){
+        window.location.reload();
+        window.localStorage.setItem('refresh', '1');
+    }
+</script>

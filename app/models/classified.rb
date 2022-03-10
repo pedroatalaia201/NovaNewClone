@@ -1,4 +1,5 @@
 class Classified < ApplicationRecord
+    include ActionView::Helpers::NumberHelper
     validates :title, :price, :name, :phone, :email, :description, presence: true
 
     has_many :classified_images, dependent: :destroy
@@ -17,5 +18,10 @@ class Classified < ApplicationRecord
 
     def product_images
       classified_images
+    end
+
+    # safe formatting
+    def number_to_currency_br(price)
+      number_to_currency(price, :unit => "R$ ", :separator => ",", :delimiter => ".")
     end
 end
