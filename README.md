@@ -1,24 +1,14 @@
-# README
+# Nova News Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a clone from the <a href = "https://www.novanews.com.br/"> news site </a> of my town. It was maded using Ruby on Rails<br>
 
-Things you may want to cover:
+> :warning: **This project still in development!**
 
-* Ruby version
 
-* System dependencies
+<br>
 
-* Configuration
+![Screenshot from 2022-03-11 16-35-51](https://user-images.githubusercontent.com/61173210/157960945-dfdf4828-48ec-433b-9000-296328b82352.png)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<br><br>
+> - Ruby 2.3.3
+> - Rails 5.0.7.2
